@@ -95,19 +95,11 @@ const Navigation = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isScrolled
-                  ? 'text-slate-600 hover:text-slate-900'
-                  : 'text-slate-600 hover:text-slate-900'
-                  }`}
-              >
-                Sign In
-              </motion.button>
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => router.push('/contact')}
                 className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all"
               >
                 <Sparkles className="w-4 h-4" />
@@ -160,10 +152,14 @@ const Navigation = () => {
                   ))}
 
                   <div className="flex gap-3 pt-4 border-t border-slate-100">
-                    <Button variant="outline" className="flex-1">
-                      Sign In
-                    </Button>
-                    <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600">
+
+                    <Button
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        router.push('/contact');
+                      }}
+                      className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600"
+                    >
                       Get Started
                     </Button>
                   </div>

@@ -11,6 +11,7 @@ import {
   HelpCircle,
   IndianRupee,
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 // Button component not used
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,6 +76,7 @@ const Pricing = () => {
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [, setHoveredPlan] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -184,16 +186,14 @@ const Pricing = () => {
 
               {/* Glow Effect */}
               <div
-                className={`absolute -inset-1 bg-gradient-to-r ${plan.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 ${
-                  plan.popular ? 'opacity-10' : ''
-                }`}
+                className={`absolute -inset-1 bg-gradient-to-r ${plan.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 ${plan.popular ? 'opacity-10' : ''
+                  }`}
               />
 
               {/* Card */}
               <motion.div
-                className={`relative h-full bg-white rounded-2xl p-8 lg:p-10 border-2 ${
-                  plan.popular ? 'border-purple-200 shadow-2xl' : 'border-slate-200 shadow-lg'
-                } hover:border-transparent transition-all duration-500`}
+                className={`relative h-full bg-white rounded-2xl p-8 lg:p-10 border-2 ${plan.popular ? 'border-purple-200 shadow-2xl' : 'border-slate-200 shadow-lg'
+                  } hover:border-transparent transition-all duration-500`}
                 whileHover={{ y: -8 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
               >
@@ -225,11 +225,11 @@ const Pricing = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full py-4 px-6 rounded-xl font-semibold text-lg mb-8 flex items-center justify-center gap-2 transition-all duration-300 ${
-                    plan.popular
+                  onClick={() => router.push('/contact')}
+                  className={`w-full py-4 px-6 rounded-xl font-semibold text-lg mb-8 flex items-center justify-center gap-2 transition-all duration-300 ${plan.popular
                       ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40'
                       : 'bg-white border-2 border-slate-200 text-slate-700 hover:border-blue-300 hover:bg-blue-50'
-                  }`}
+                    }`}
                 >
                   {plan.cta}
                   <ArrowRight className="w-5 h-5" />
@@ -264,7 +264,7 @@ const Pricing = () => {
                 {/* Help Text */}
                 <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-sm text-slate-500">
                   <HelpCircle className="w-4 h-4" />
-                  <span>Need help choosing? <button className="text-blue-500 hover:underline">Contact us</button></span>
+                  <span>Need help choosing? <button onClick={() => router.push('/contact')} className="text-blue-500 hover:underline">Contact us</button></span>
                 </div>
               </motion.div>
             </motion.div>
@@ -287,6 +287,7 @@ const Pricing = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => router.push('/contact')}
               className="px-6 py-3 bg-white text-slate-900 font-semibold rounded-xl hover:bg-blue-50 transition-colors duration-300"
             >
               Contact Sales

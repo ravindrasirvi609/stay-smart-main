@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Sparkles, Zap, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ const Hero = () => {
   const buttonsRef = useRef<HTMLDivElement>(null);
   const dashboardRef = useRef<HTMLDivElement>(null);
   const orbsRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -206,6 +208,7 @@ const Hero = () => {
             >
               <Button
                 size="lg"
+                onClick={() => router.push('/contact')}
                 className="h-14 px-8 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 rounded-xl"
               >
                 <Play className="mr-2 h-5 w-5 fill-current" />
@@ -221,6 +224,12 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
+                onClick={() => {
+                  const element = document.querySelector('#features');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="h-14 px-8 text-lg border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 text-slate-700 rounded-xl transition-all duration-300"
               >
                 Learn More
