@@ -76,7 +76,7 @@ const Footer = () => {
                 </div>
                 <span className="text-xl font-bold text-white">StaySmart</span>
               </motion.div>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ const Footer = () => {
                   <Mail className="w-4 h-4" />
                   <span className="text-sm">hello@staysmart.com</span>
                 </a>
-                <a href="tel:+919876543210" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                <a href="tel:+918107199052" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">+91 98765 43210</span>
                 </a>

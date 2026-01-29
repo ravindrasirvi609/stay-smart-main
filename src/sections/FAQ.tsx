@@ -147,29 +147,26 @@ const FAQ = () => {
               transition={{ delay: index * 0.05 }}
             >
               <div
-                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${
-                  openIndex === index
+                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${openIndex === index
                     ? 'border-blue-300 shadow-lg shadow-blue-500/10'
                     : 'border-slate-200 hover:border-blue-200 hover:shadow-md'
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
                 >
-                  <span className={`font-semibold pr-4 transition-colors duration-300 ${
-                    openIndex === index ? 'text-blue-600' : 'text-slate-900'
-                  }`}>
+                  <span className={`font-semibold pr-4 transition-colors duration-300 ${openIndex === index ? 'text-blue-600' : 'text-slate-900'
+                    }`}>
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                      openIndex === index
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${openIndex === index
                         ? 'bg-blue-500 text-white'
                         : 'bg-slate-100 text-slate-500'
-                    }`}
+                      }`}
                   >
                     {openIndex === index ? (
                       <Minus className="w-4 h-4" />
@@ -227,7 +224,7 @@ const FAQ = () => {
                 Email Us
               </motion.a>
               <motion.a
-                href="tel:+919876543210"
+                href="tel:+918107199052"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-5 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors duration-300"
