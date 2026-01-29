@@ -132,7 +132,7 @@ const CustomBranding = () => {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-100/40 to-blue-100/40 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-cyan-100/40 to-blue-100/40 rounded-full blur-3xl" />
-        
+
         {/* Animated Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
@@ -198,7 +198,7 @@ const CustomBranding = () => {
           >
             {/* Glow Effect */}
             <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl opacity-60" />
-            
+
             {/* Browser Window */}
             <motion.div
               className="relative bg-slate-900 rounded-2xl overflow-hidden shadow-2xl"
@@ -245,7 +245,7 @@ const CustomBranding = () => {
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">Welcome to Your PG</h3>
                     <p className="text-slate-600">Premium living spaces with modern amenities</p>
                   </div>
-                  
+
                   {/* Room Cards */}
                   <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
                     <motion.div
@@ -270,7 +270,7 @@ const CustomBranding = () => {
                 {/* Footer */}
                 <div className="bg-slate-900 px-6 py-4">
                   <div className="flex items-center justify-between text-slate-400 text-xs">
-                    <span>© 2024 Your PG Name. All rights reserved.</span>
+                    <span>© 2026 Your PG Name. All rights reserved.</span>
                     <div className="flex gap-4">
                       <span>Privacy</span>
                       <span>Terms</span>
