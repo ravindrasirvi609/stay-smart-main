@@ -279,68 +279,12 @@ const Hero = () => {
               </div>
 
               {/* Dashboard Content */}
-              <div className="p-6 bg-slate-50">
-                <div className="grid grid-cols-12 gap-4">
-                  {/* Sidebar */}
-                  <div className="col-span-3 bg-white rounded-xl shadow-sm border border-slate-100 p-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg mb-4" />
-                    <div className="space-y-2">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="h-8 bg-slate-100 rounded-lg" />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Main Content */}
-                  <div className="col-span-9 space-y-4">
-                    {/* Header */}
-                    <div className="h-16 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center px-4 justify-between">
-                      <div className="flex gap-2">
-                        <div className="w-24 h-8 bg-slate-100 rounded-lg" />
-                      </div>
-                      <div className="flex gap-2">
-                        <div className="w-8 h-8 bg-slate-100 rounded-full" />
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full" />
-                      </div>
-                    </div>
-
-                    {/* Stats Cards */}
-                    <div className="grid grid-cols-3 gap-4">
-                      {[
-                        { color: 'from-blue-500 to-blue-600', label: 'Total Tenants' },
-                        { color: 'from-green-500 to-green-600', label: 'Occupancy' },
-                        { color: 'from-purple-500 to-purple-600', label: 'Revenue' },
-                      ].map((stat, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 1.5 + i * 0.1 }}
-                          className="bg-white rounded-xl shadow-sm border border-slate-100 p-4"
-                        >
-                          <div className={`w-10 h-10 bg-gradient-to-br ${stat.color} rounded-lg mb-3`} />
-                          <div className="h-4 w-20 bg-slate-100 rounded mb-2" />
-                          <div className="h-6 w-16 bg-slate-200 rounded" />
-                        </motion.div>
-                      ))}
-                    </div>
-
-                    {/* Chart Area */}
-                    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 h-48">
-                      <div className="flex items-end justify-between h-full gap-2 px-4">
-                        {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75, 50, 95].map((h, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ height: 0 }}
-                            animate={{ height: `${h}%` }}
-                            transition={{ delay: 1.8 + i * 0.05, duration: 0.5, ease: 'easeOut' }}
-                            className="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t-md opacity-80"
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="bg-slate-50 relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="/dashboard.png"
+                  alt="Stay Smart Dashboard Preview"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 
