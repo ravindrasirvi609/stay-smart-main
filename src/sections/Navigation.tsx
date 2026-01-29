@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   BedDouble,
   Menu,
@@ -14,6 +16,7 @@ const navLinks = [
   { label: 'How it Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const Navigation = () => {
@@ -29,11 +32,17 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const router = useRouter();
+
+  const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push(href);
     }
   };
 
@@ -43,11 +52,10 @@ const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-white/80 backdrop-blur-xl shadow-lg shadow-slate-200/20'
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? 'bg-white/80 backdrop-blur-xl shadow-lg shadow-slate-200/20'
+          : 'bg-transparent'
+          }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center justify-between h-16 lg:h-20">
@@ -61,9 +69,8 @@ const Navigation = () => {
               <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                 <BedDouble className="w-5 h-5 text-white" />
               </div>
-              <span className={`font-bold text-lg transition-colors ${
-                isScrolled ? 'text-slate-900' : 'text-slate-900'
-              }`}>
+              <span className={`font-bold text-lg transition-colors ${isScrolled ? 'text-slate-900' : 'text-slate-900'
+                }`}>
                 StaySmart
               </span>
             </motion.a>
@@ -73,12 +80,11 @@ const Navigation = () => {
               {navLinks.map((link) => (
                 <motion.button
                   key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className={`text-sm font-medium transition-colors ${
-                    isScrolled
-                      ? 'text-slate-600 hover:text-blue-600'
-                      : 'text-slate-600 hover:text-blue-600'
-                  }`}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`text-sm font-medium transition-colors ${isScrolled
+                    ? 'text-slate-600 hover:text-blue-600'
+                    : 'text-slate-600 hover:text-blue-600'
+                    }`}
                   whileHover={{ y: -2 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 >
@@ -92,11 +98,10 @@ const Navigation = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  isScrolled
-                    ? 'text-slate-600 hover:text-slate-900'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isScrolled
+                  ? 'text-slate-600 hover:text-slate-900'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 Sign In
               </motion.button>
@@ -146,14 +151,14 @@ const Navigation = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      onClick={() => scrollToSection(link.href)}
+                      onClick={() => handleNavClick(link.href)}
                       className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium transition-colors"
                     >
                       {link.label}
                       <ChevronRight className="w-5 h-5" />
                     </motion.button>
                   ))}
-                  
+
                   <div className="flex gap-3 pt-4 border-t border-slate-100">
                     <Button variant="outline" className="flex-1">
                       Sign In
