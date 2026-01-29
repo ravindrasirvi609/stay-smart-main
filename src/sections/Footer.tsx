@@ -95,9 +95,9 @@ const Footer = () => {
                 transition={{ delay: 0.2 }}
                 className="space-y-3"
               >
-                <a href="mailto:hello@staysmart.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                <a href="mailto:hello@staysmart.in" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
                   <Mail className="w-4 h-4" />
-                  <span className="text-sm">hello@staysmart.com</span>
+                  <span className="text-sm">hello@staysmart.in</span>
                 </a>
                 <a href="tel:+918107199052" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
                   <Phone className="w-4 h-4" />

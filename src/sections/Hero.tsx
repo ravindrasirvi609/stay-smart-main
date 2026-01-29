@@ -129,7 +129,7 @@ const Hero = () => {
         <div className="orb absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-3xl" />
         <div className="orb absolute top-1/4 -right-32 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-cyan-400/15 to-blue-400/15 blur-3xl" />
         <div className="orb absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-400/10 to-pink-400/10 blur-3xl" />
-        
+
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
@@ -212,7 +212,7 @@ const Hero = () => {
                 Book Free Demo
               </Button>
             </motion.div>
-            
+
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -261,7 +261,7 @@ const Hero = () => {
           >
             {/* Glow Effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-60" />
-            
+
             {/* Dashboard Container */}
             <div className="relative rounded-2xl overflow-hidden bg-white shadow-2xl border border-slate-200/60">
               {/* Browser Chrome */}
@@ -273,11 +273,11 @@ const Hero = () => {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <div className="bg-white px-4 py-1.5 rounded-lg text-xs text-slate-400 font-mono shadow-sm border border-slate-200">
-                    dashboard.staysmart.com
+                    dashboard.staysmart.in
                   </div>
                 </div>
               </div>
-              
+
               {/* Dashboard Content */}
               <div className="p-6 bg-slate-50">
                 <div className="grid grid-cols-12 gap-4">
@@ -290,7 +290,7 @@ const Hero = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   {/* Main Content */}
                   <div className="col-span-9 space-y-4">
                     {/* Header */}
@@ -303,7 +303,7 @@ const Hero = () => {
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full" />
                       </div>
                     </div>
-                    
+
                     {/* Stats Cards */}
                     <div className="grid grid-cols-3 gap-4">
                       {[
@@ -324,7 +324,7 @@ const Hero = () => {
                         </motion.div>
                       ))}
                     </div>
-                    
+
                     {/* Chart Area */}
                     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 h-48">
                       <div className="flex items-end justify-between h-full gap-2 px-4">
@@ -343,7 +343,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Floating Elements */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -360,7 +360,7 @@ const Hero = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}

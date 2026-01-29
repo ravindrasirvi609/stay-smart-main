@@ -172,11 +172,10 @@ const RoleDashboards = () => {
             <motion.button
               key={role.id}
               onClick={() => setActiveRole(role.id)}
-              className={`relative flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                activeRole === role.id
+              className={`relative flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${activeRole === role.id
                   ? 'text-white shadow-lg'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
-              }`}
+                }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -249,7 +248,7 @@ const RoleDashboards = () => {
                     </div>
                     <div className="flex-1 flex justify-center">
                       <div className="bg-white px-4 py-1.5 rounded-lg text-xs text-slate-400 font-mono shadow-sm border border-slate-200">
-                        {activeRole}.staysmart.com
+                        {activeRole}.staysmart.in
                       </div>
                     </div>
                   </div>
