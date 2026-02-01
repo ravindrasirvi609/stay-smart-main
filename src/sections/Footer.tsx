@@ -22,7 +22,7 @@ const footerLinks = {
     { label: 'Roadmap', href: '#roadmap' },
   ],
   company: [
-    { label: 'About Us', href: '#about' },
+    { label: 'About Us', href: '/about' },
     { label: 'Careers', href: '#careers' },
     { label: 'Blog', href: '#blog' },
     { label: 'Press Kit', href: '#press' },
